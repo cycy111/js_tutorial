@@ -12,9 +12,11 @@ function palindromeTester() {
   }
 }
 
-let button = document.querySelector("#palindromeTester");
-button.addEventListener("click", function() {
-  palindromeTester();
+document.addEventListener("DOMContentLoaded", function() {
+  let button = document.querySelector("#palindromeTester");
+  button.addEventListener("click", function() {
+    palindromeTester();
+  });
 });
 
 },{"cycy-palindrome":2}],2:[function(require,module,exports){
