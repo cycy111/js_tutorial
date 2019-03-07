@@ -3,6 +3,7 @@ let Phrase = require("cycy-palindrome");
 
 function palindromeTester(event) {
 	event.preventDefault();
+	
 //  let string = prompt("Please enter a string for palindrome testing:");
   let phrase = new Phrase(event.target.phrase.value);
   let palindromeResult = document.querySelector("#palindromeResult");
@@ -42,12 +43,20 @@ function Phrase(content) {
   // For example:
   //   new Phrase("Hello, world!").letters() === "Helloworld"
   this.letters = function letters() {
+    const lettersRegEx = /[a-z]/gi;
     //return Array.from(this.content).filter(c => c.match(/[a-z]/i)).join("");
-    return (this.content.match(/[a-z]/gi) || []).join("");
+    return (this.content.match(lettersRegEx) || []).join("");
   }
   // Returns true if the phrase is a palindrome, false otherwise.
   this.palindrome = function palindrome() {
-    return this.processedContent() === this.processedContent().reverse();
+    debugger;
+    if (this.processedContent().trim().length!=0)
+    {
+      return this.processedContent() === this.processedContent().reverse();
+    } else 
+    {
+      return false;
+    }
   }
 }
 
